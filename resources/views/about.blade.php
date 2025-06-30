@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About San Miguel | ArcGuide</title>
-    <link rel="stylesheet" href="../assets/bootstrap-5.3.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="{{ asset('assets/bootstrap-5.3.3-dist/css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
         <nav class="navbar navbar-expand-lg bg-body-light px-5">
             <div class="container-fluid justify-content-center">
                 <a class="navbar-brand mx-auto" href="{{ url('/') }}" onclick="reloadPage()">
-                    <img src="assets/icons/logo.svg" alt="Logo" class="logo d-inline-block align-text-top" />
+                    <img src="{{ asset('assets/icons/logo.svg') }}" alt="Logo" class="logo d-inline-block align-text-top" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -228,8 +228,8 @@
         </div>
     </div>
 
-    <script src="../assets/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
-    <script src="../assets/js/script.js"></script>
+<script src="{{ asset('assets/bootstrap-5.3.3-dist/js/bootstrap.bundle.js') }}"></script>
+<script src="{{ asset('assets/js/script.js') }}"></script>
 </body>
 
 </html>
