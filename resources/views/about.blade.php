@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About San Miguel | ArcGuide</title>
-<link rel="stylesheet" href="{{ asset('assets/bootstrap-5.3.3-dist/css/bootstrap.min.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ asset('assets/icons/logo.svg') }}">
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap-5.3.3-dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
 
 <body>
@@ -14,7 +15,8 @@
         <nav class="navbar navbar-expand-lg bg-body-light px-5">
             <div class="container-fluid justify-content-center">
                 <a class="navbar-brand mx-auto" href="{{ url('/') }}" onclick="reloadPage()">
-                    <img src="{{ asset('assets/icons/logo.svg') }}" alt="Logo" class="logo d-inline-block align-text-top" />
+                    <img src="{{ asset('assets/icons/logo.svg') }}" alt="Logo"
+                        class="logo d-inline-block align-text-top" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,38 +24,32 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <!-- Example nav items -->
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/about') }}">About San Miguel</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/spots') }}">Tourists Spots</a>
-
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/maps') }}">Maps</a>
-
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/events') }}">Events</a>
-
                         </li>
                     </ul>
-
                 </div>
             </div>
         </nav>
 
         <main class="main">
-            <section class="py-5" style="background: #f8f5ee;">
+            <section class="about-section py-5" style="background: #f8f5ee;">
                 <div class="container">
                     <div class="row mb-4">
                         <div class="col-12 col-lg-10 mx-auto text-center">
-                            <h1 class="fw-bold mb-3" style="color:#123c63;">About San Miguel</h1>
+                            <h1 class="fw-bold mb-3 about-title">About San Miguel</h1>
                             <p class="lead text-muted mb-0">
                                 Discover the rich history, culture, and community of San Miguel, Bulacan.
                             </p>
@@ -62,8 +58,8 @@
                     <div class="row g-4">
                         <!-- History Card -->
                         <div class="col-12 col-lg-7">
-                            <div class="card h-100 shadow-sm border-0 p-4">
-                                <h3 class="fw-bold mb-3" style="color:#123c63;">History</h3>
+                            <div class="about-card card h-100 shadow-sm border-0 p-4">
+                                <h3 class="fw-bold mb-3 about-title">History</h3>
                                 <p class="mb-2 text-muted" style="text-align:justify;">
                                     San Miguel is one of the most progressive towns in Bulacan. Miguel Pineda in 1763,
                                     the first "Captain Municipal" of the place founded it.
@@ -111,27 +107,27 @@
                         </div>
                         <!-- Fast Facts Card -->
                         <div class="col-12 col-lg-5">
-                            <div class="card h-100 shadow-sm border-0 p-4">
-                                <h3 class="fw-bold mb-3" style="color:#123c63;">Fast Facts</h3>
-                                <ul class="list-unstyled mb-3">
+                            <div class="about-card card h-100 shadow-sm border-0 p-4">
+                                <h3 class="fw-bold mb-3 about-title">Fast Facts</h3>
+                                <ul class="about-facts-list list-unstyled mb-3">
                                     <li><strong>Land Area:</strong> 26,524 has</li>
                                     <li><strong>No. of Barangays:</strong> 49</li>
                                     <li><strong>Population (2015):</strong> 153,882</li>
                                 </ul>
-                                <h5 class="fw-bold mt-4 mb-2" style="color:#123c63;">Major Industries</h5>
+                                <h5 class="fw-bold mt-4 mb-2 about-title">Major Industries</h5>
                                 <ul class="list-unstyled mb-3">
                                     <li>Agricultural, Food Art, Food Products</li>
                                 </ul>
-                                <h5 class="fw-bold mt-4 mb-2" style="color:#123c63;">Major Products</h5>
+                                <h5 class="fw-bold mt-4 mb-2 about-title">Major Products</h5>
                                 <ul class="list-unstyled mb-3">
                                     <li>Vegetables, Sweets and Delicacies, Chicharon</li>
                                 </ul>
-                                <h5 class="fw-bold mt-4 mb-2" style="color:#123c63;">Municipal Officials</h5>
+                                <h5 class="fw-bold mt-4 mb-2 about-title">Municipal Officials</h5>
                                 <ul class="list-unstyled mb-3">
                                     <li><strong>Mayor:</strong> Roderick DG. Tiongson</li>
                                     <li><strong>Vice Mayor:</strong> John A. Alvarez</li>
                                 </ul>
-                                <h5 class="fw-bold mt-4 mb-2" style="color:#123c63;">Mailing Address</h5>
+                                <h5 class="fw-bold mt-4 mb-2 about-title">Mailing Address</h5>
                                 <address class="mb-0">
                                     EnP. Pedro R. Sambas<br>
                                     Municipal Planning and Development Office<br>
@@ -144,73 +140,78 @@
                     <!-- Barangays Card -->
                     <div class="row mt-4">
                         <div class="col-12">
-                            <div class="card shadow-sm border-0 p-4">
-                                <h3 class="fw-bold mb-3" style="color:#123c63;">Barangays of San Miguel</h3>
-                                <div class="row">
-                                    <div class="col-12 col-md-6 col-lg-3">
-                                        <ul class="list-unstyled small">
-                                            <li>1. Bagong Pag-asa</li>
-                                            <li>2. Bagong Silang</li>
-                                            <li>3. Balaong</li>
-                                            <li>4. Balite</li>
-                                            <li>5. Bantog</li>
-                                            <li>6. Bardias</li>
-                                            <li>7. Baritan</li>
-                                            <li>8. Batasan Bata</li>
-                                            <li>9. Batasan Matanda</li>
-                                            <li>10. Biak-na-Bato</li>
-                                            <li>11. Biclat</li>
-                                            <li>12. Buga</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-3">
-                                        <ul class="list-unstyled small">
-                                            <li>13. Buliran</li>
-                                            <li>14. Bulualto</li>
-                                            <li>15. Calumpang</li>
-                                            <li>16. Cambio</li>
-                                            <li>17. Camias</li>
-                                            <li>18. Ilog-Bulo</li>
-                                            <li>19. King Kabayo</li>
-                                            <li>20. Labne</li>
-                                            <li>21. Lambakin</li>
-                                            <li>22. Magmarale</li>
-                                            <li>23. Malibay</li>
-                                            <li>24. Maligaya</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-3">
-                                        <ul class="list-unstyled small">
-                                            <li>25. Mandile</li>
-                                            <li>26. Masalipit</li>
-                                            <li>27. Pacalag</li>
-                                            <li>28. Paliwasan</li>
-                                            <li>29. Partida</li>
-                                            <li>30. Pinambaran</li>
-                                            <li>31. Poblacion</li>
-                                            <li>32. Pulong Bayabas</li>
-                                            <li>33. Pulong Duhat</li>
-                                            <li>34. Sacdalan</li>
-                                            <li>35. Salacot</li>
-                                            <li>36. Salangan</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-3">
-                                        <ul class="list-unstyled small">
-                                            <li>37. San Agustin</li>
-                                            <li>38. San Jose</li>
-                                            <li>39. San Juan</li>
-                                            <li>40. San Vicente</li>
-                                            <li>41. Santa Ines</li>
-                                            <li>42. Santa Lucia</li>
-                                            <li>43. Santa Rita Bata</li>
-                                            <li>44. Santa Rita Matanda</li>
-                                            <li>45. Sapang</li>
-                                            <li>46. Sibul</li>
-                                            <li>47. Tartaro</li>
-                                            <li>48. Tibagan</li>
-                                            <li>49. Tigpalas</li>
-                                        </ul>
+                            <div class="about-card card shadow-sm border-0 p-4">
+                                <h3 class="fw-bold mb-3 about-title">
+                                    <span class="about-barangays-toggle" onclick="toggleBarangays()">Barangays of San
+                                        Miguel <span id="barangays-arrow">&#9660;</span></span>
+                                </h3>
+                                <div id="about-barangays-list" class="about-barangays-list">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <ul class="list-unstyled small">
+                                                <li>1. Bagong Pag-asa</li>
+                                                <li>2. Bagong Silang</li>
+                                                <li>3. Balaong</li>
+                                                <li>4. Balite</li>
+                                                <li>5. Bantog</li>
+                                                <li>6. Bardias</li>
+                                                <li>7. Baritan</li>
+                                                <li>8. Batasan Bata</li>
+                                                <li>9. Batasan Matanda</li>
+                                                <li>10. Biak-na-Bato</li>
+                                                <li>11. Biclat</li>
+                                                <li>12. Buga</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <ul class="list-unstyled small">
+                                                <li>13. Buliran</li>
+                                                <li>14. Bulualto</li>
+                                                <li>15. Calumpang</li>
+                                                <li>16. Cambio</li>
+                                                <li>17. Camias</li>
+                                                <li>18. Ilog-Bulo</li>
+                                                <li>19. King Kabayo</li>
+                                                <li>20. Labne</li>
+                                                <li>21. Lambakin</li>
+                                                <li>22. Magmarale</li>
+                                                <li>23. Malibay</li>
+                                                <li>24. Maligaya</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <ul class="list-unstyled small">
+                                                <li>25. Mandile</li>
+                                                <li>26. Masalipit</li>
+                                                <li>27. Pacalag</li>
+                                                <li>28. Paliwasan</li>
+                                                <li>29. Partida</li>
+                                                <li>30. Pinambaran</li>
+                                                <li>31. Poblacion</li>
+                                                <li>32. Pulong Bayabas</li>
+                                                <li>33. Pulong Duhat</li>
+                                                <li>34. Sacdalan</li>
+                                                <li>35. Salacot</li>
+                                                <li>36. Salangan</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <ul class="list-unstyled small">
+                                                <li>37. San Agustin</li>
+                                                <li>38. San Jose</li>
+                                                <li>39. San Juan</li>
+                                                <li>40. San Vicente</li>
+                                                <li>41. Santa Ines</li>
+                                                <li>42. Santa Lucia</li>
+                                                <li>43. Santa Rita Bata</li>
+                                                <li>44. Santa Rita Matanda</li>
+                                                <li>45. Sapang</li>
+                                                <li>46. Sibul</li>
+                                                <li>47. Tartaro</li>
+                                                <li>48. Tibagan</li>
+                                                <li>49. Tigpalas</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -220,6 +221,11 @@
             </section>
         </main>
 
+        <button class="about-backtotop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to Top"
+            style="display:none;">
+            &uarr;
+        </button>
+
         <div class="footer">
             <div class="container text-center py-4">
                 <p class="mb-0" style="color: #123c63;">&copy; 2025 ArcGuide. All rights reserved.</p>
@@ -228,8 +234,11 @@
         </div>
     </div>
 
-<script src="{{ asset('assets/bootstrap-5.3.3-dist/js/bootstrap.bundle.js') }}"></script>
-<script src="{{ asset('assets/js/script.js') }}"></script>
+    <script src="{{ asset('assets/bootstrap-5.3.3-dist/js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/script.js') }}"></script>
+    <script>
+
+    </script>
 </body>
 
 </html>

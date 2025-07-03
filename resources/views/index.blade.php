@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArcGuide: Tourism Hub for San Miguel Bulacan</title>
+        <link rel="icon" type="image/svg+xml" href="{{ asset('assets/icons/logo.svg') }}">
     <link rel="stylesheet" href="{{ asset('assets/bootstrap-5.3.3-dist/css/bootstrap.min.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
 
 <body>
@@ -15,7 +16,8 @@
         <nav class="navbar navbar-expand-lg bg-body-light px-5">
             <div class="container-fluid justify-content-center">
                 <a class="navbar-brand mx-auto" href="{{ url('/') }}" onclick="reloadPage()">
-                    <img src="{{ asset('assets/icons/logo.svg') }}" alt="Logo" class="logo d-inline-block align-text-top" />
+                    <img src="{{ asset('assets/icons/logo.svg') }}" alt="Logo"
+                        class="logo d-inline-block align-text-top" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,7 +66,7 @@
                                 <p class="lead mb-4" style="color: #fff;">
                                     Welcome to ArchGuide – Your Gateway to Discovering San Miguel, Bulacan
                                 </p>
-                                <a class="btn btn-lg btn-explore" href="#about">Explore</a>
+                                <a class="btn btn-lg btn-explore"  href="{{ url('/spots') }}">Explore</a>
                             </div>
                         </div>
                     </div>
@@ -75,48 +77,63 @@
             <section class="info-section py-5" style="background: #f8f5ee;">
                 <div class="container">
                     <div class="row g-4">
-                        <div class="col-12 col-md-6 col-lg-3" style="cursor: pointer;">
-                            <a href="{{ url('/about') }}" class="text-decoration-none text-reset">
-                                <div class="card h-100 shadow-sm border-0 p-4 text-center">
-                                    <img src="{{ asset('assets/icons/about.svg') }}" alt="About" style="height:40px;"
-                                        class="mb-3">
-                                    <h5 class="fw-bold mb-2" style="color:#123c63;">About San Miguel</h5>
-                                    <p class="mb-0 text-muted">Learn about the history and culture of San Miguel</p>
+                        <div class="col-12 col-md-6 col-lg-3 d-flex">
+                            <a href="{{ url('/about') }}" class="text-decoration-none text-reset w-100 h-100">
+                                <div
+                                    class="arcguide-card card h-100 shadow-sm border-0 p-4 d-flex flex-column align-items-center">
+                                    <div class="arcguide-card-img-wrapper mb-3">
+                                        <img src="{{ asset('assets/picutures/faq.svg') }}" alt="About">
+                                    </div>
+                                    <div class="card-body p-0 text-center d-flex flex-column flex-grow-1">
+                                        <h5 class="card-title fw-bold mb-2" style="color:#114f89;">About San Miguel</h5>
+                                        <p class="card-text mb-0">Learn about the history and culture of San Miguel</p>
+                                    </div>
                                 </div>
                             </a>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-3" style="cursor: pointer;">
-                            <a href="{{ url('/spots') }}" class="text-decoration-none text-reset">
-                                <div class="card h-100 shadow-sm border-0 p-4 text-center">
-                                    <img src="{{ asset('assets/icons/spots.svg') }}" alt="Spots" style="height:40px;"
-                                        class="mb-3">
-                                    <h5 class="fw-bold mb-2" style="color:#123c63;">Tourist Spots</h5>
-                                    <p class="mb-0 text-muted">Discover the top attractions and landmarks</p>
+                        <div class="col-12 col-md-6 col-lg-3 d-flex">
+                            <a href="{{ url('/spots') }}" class="text-decoration-none text-reset w-100 h-100">
+                                <div
+                                    class="arcguide-card card h-100 shadow-sm border-0 p-4 d-flex flex-column align-items-center">
+                                    <div class="arcguide-card-img-wrapper mb-3">
+                                        <img src="{{ asset('assets/picutures/tourSpot.svg') }}" alt="About">
+                                    </div>
+                                    <div class="card-body p-0 text-center d-flex flex-column flex-grow-1">
+                                        <h5 class="card-title fw-bold mb-2" style="color:#114f89;">Tourists Spots</h5>
+                                        <p class="card-text mb-0">Discover the top tourist spots and attractions in San Miguel</p>
+                                    </div>
                                 </div>
                             </a>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-3" style="cursor: pointer;">
-                            <a href="{{ url('/maps') }}" class="text-decoration-none text-reset">
-                                <div class="card h-100 shadow-sm border-0 p-4 text-center">
-                                    <img src="{{ asset('assets/icons/map.svg') }}" alt="Map" style="height:40px;"
-                                        class="mb-3">
-                                    <h5 class="fw-bold mb-2" style="color:#123c63;">Interactive Map</h5>
-                                    <p class="mb-0 text-muted">Find places of interest on the map</p>
+                        <div class="col-12 col-md-6 col-lg-3 d-flex">
+                            <a href="{{ url('/maps') }}" class="text-decoration-none text-reset w-100 h-100">
+                                <div
+                                    class="arcguide-card card h-100 shadow-sm border-0 p-4 d-flex flex-column align-items-center">
+                                    <div class="arcguide-card-img-wrapper mb-3">
+                                        <img src="{{ asset('assets/picutures/interactiveMap.svg') }}" alt="About">
+                                    </div>
+                                    <div class="card-body p-0 text-center d-flex flex-column flex-grow-1">
+                                        <h5 class="card-title fw-bold mb-2" style="color:#114f89;">Interactive Map</h5>
+                                        <p class="card-text mb-0">Explore San Miguel with our interactive map feature</p>
+                                    </div>
                                 </div>
                             </a>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-3" style="cursor: pointer;">
-                            <a href="{{ url('/events') }}" class="text-decoration-none text-reset">
-                                <div class="card h-100 shadow-sm border-0 p-4 text-center">
-                                    <img src="{{ asset('assets/icons/events.svg') }}" alt="Events" style="height:40px;"
-                                        class="mb-3">
-                                    <h5 class="fw-bold mb-2" style="color:#123c63;">Upcoming Events</h5>
-                                    <p class="mb-0 text-muted">Check out the latest events and festivals</p>
+                        <div class="col-12 col-md-6 col-lg-3 d-flex">
+                            <a href="{{ url('/about') }}" class="text-decoration-none text-reset w-100 h-100">
+                                <div
+                                    class="arcguide-card card h-100 shadow-sm border-0 p-4 d-flex flex-column align-items-center">
+                                    <div class="arcguide-card-img-wrapper mb-3">
+                                        <img src="{{ asset('assets/picutures/upEvents.svg') }}" alt="About">
+                                    </div>
+                                    <div class="card-body p-0 text-center d-flex flex-column flex-grow-1">
+                                        <h5 class="card-title fw-bold mb-2" style="color:#114f89;">Upcoming Events</h5>
+                                        <p class="card-text mb-0">Stay updated with the latest events happening in San Miguel</p>
+                                    </div>
                                 </div>
                             </a>
-                        </div>
+                        </div>  
                     </div>
-                </div>
             </section>
 
 
@@ -136,8 +153,8 @@
 
 
 
-<script src="{{ asset('assets/bootstrap-5.3.3-dist/js/bootstrap.bundle.js') }}"></script>
-<script src="{{ asset('assets/js/script.js') }}"></script>
+    <script src="{{ asset('assets/bootstrap-5.3.3-dist/js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/script.js') }}"></script>
 </body>
 
 </html>
