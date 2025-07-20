@@ -78,11 +78,11 @@
                 <div class="container">
                     <div class="row g-4">
                         <div class="col-12 col-md-6 col-lg-3 d-flex">
-                            <a href="{{ url('/about') }}" class="text-decoration-none text-reset w-100 h-100">
+                            <a href="pages/about.php" class="text-decoration-none text-reset w-100 h-100">
                                 <div
                                     class="arcguide-card card h-100 shadow-sm border-0 p-4 d-flex flex-column align-items-center">
                                     <div class="arcguide-card-img-wrapper mb-3">
-                                        <img src="{{ asset('assets/picutures/faq.svg') }}" alt="About">
+                                        <img src="assets/picutures/faq.svg" alt="About">
                                     </div>
                                     <div class="card-body p-0 text-center d-flex flex-column flex-grow-1">
                                         <h5 class="card-title fw-bold mb-2" style="color:#114f89;">About San Miguel</h5>
@@ -92,11 +92,11 @@
                             </a>
                         </div>
                         <div class="col-12 col-md-6 col-lg-3 d-flex">
-                            <a href="{{ url('/spots') }}" class="text-decoration-none text-reset w-100 h-100">
+                            <a href="pages/spots.php" class="text-decoration-none text-reset w-100 h-100">
                                 <div
                                     class="arcguide-card card h-100 shadow-sm border-0 p-4 d-flex flex-column align-items-center">
                                     <div class="arcguide-card-img-wrapper mb-3">
-                                        <img src="{{ asset('assets/picutures/tourSpot.svg') }}" alt="About">
+                                        <img src="assets/picutures/tourSpot.svg" alt="About">
                                     </div>
                                     <div class="card-body p-0 text-center d-flex flex-column flex-grow-1">
                                         <h5 class="card-title fw-bold mb-2" style="color:#114f89;">Tourists Spots</h5>
@@ -107,11 +107,11 @@
                             </a>
                         </div>
                         <div class="col-12 col-md-6 col-lg-3 d-flex">
-                            <a href="{{ url('/maps') }}" class="text-decoration-none text-reset w-100 h-100">
+                            <a href="pages/maps.php" class="text-decoration-none text-reset w-100 h-100">
                                 <div
                                     class="arcguide-card card h-100 shadow-sm border-0 p-4 d-flex flex-column align-items-center">
                                     <div class="arcguide-card-img-wrapper mb-3">
-                                        <img src="{{ asset('assets/picutures/interactiveMap.svg') }}" alt="About">
+                                        <img src="assets/picutures/interactiveMap.svg" alt="About">
                                     </div>
                                     <div class="card-body p-0 text-center d-flex flex-column flex-grow-1">
                                         <h5 class="card-title fw-bold mb-2" style="color:#114f89;">Interactive Map</h5>
@@ -122,11 +122,11 @@
                             </a>
                         </div>
                         <div class="col-12 col-md-6 col-lg-3 d-flex">
-                            <a href="{{ url('/about') }}" class="text-decoration-none text-reset w-100 h-100">
+                            <a href="pages/events.php" class="text-decoration-none text-reset w-100 h-100">
                                 <div
                                     class="arcguide-card card h-100 shadow-sm border-0 p-4 d-flex flex-column align-items-center">
                                     <div class="arcguide-card-img-wrapper mb-3">
-                                        <img src="{{ asset('assets/picutures/upEvents.svg') }}" alt="About">
+                                        <img src="assets/picutures/upEvents.svg" alt="About">
                                     </div>
                                     <div class="card-body p-0 text-center d-flex flex-column flex-grow-1">
                                         <h5 class="card-title fw-bold mb-2" style="color:#114f89;">Upcoming Events</h5>
