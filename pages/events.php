@@ -23,9 +23,16 @@ include '../functions/eventCarousel.php';
 
         .carousel-item img {
             object-fit: cover;
-            height: 400px;
             width: 100%;
+            max-width: 1000px;
+            height: 500px;
+            background: #f8f5ee;
+            display: block;
+            margin: 0 auto;
+            border-radius: 1rem;
+            /* optional */
         }
+
 
         .carousel-caption {
             background: rgba(17, 79, 137, 0.78);
@@ -105,6 +112,11 @@ include '../functions/eventCarousel.php';
             gap: 0.5rem;
         }
 
+        /* Hide FullCalendar's default month/year title */
+        .fc-toolbar-title {
+            display: none !important;
+        }
+
         /* For mobile: stack or center even more tightly */
         @media (max-width: 768px) {
             .fc-toolbar-chunk {
@@ -165,7 +177,9 @@ include '../functions/eventCarousel.php';
                                     <div class="d-flex flex-column align-items-center justify-content-center text-center p-4"
                                         style="min-height: 300px;">
                                         <img src="<?= htmlspecialchars($event['image']) ?>" class="mb-3 rounded"
-                                            style="max-height: 200px;" alt="<?= htmlspecialchars($event['title']) ?>">
+                                            alt="<?= htmlspecialchars($event['title']) ?>">
+
+
                                         <h5><?= htmlspecialchars($event['title']) ?></h5>
                                         <p class="text-muted small"><?= htmlspecialchars($event['description']) ?></p>
                                         <p class="text-muted small">
@@ -240,33 +254,47 @@ include '../functions/eventCarousel.php';
                 <!-- Submit Your Event Section -->
                 <section class="submit-section mb-5">
                     <h2 class="fw-bold mb-3" style="color:#114f89;">📤 Submit Your Event</h2>
-                    <form method="POST" action="events_submit.php" enctype="multipart/form-data">
+                    <form method="POST" action="../functions/events_submit.php" enctype="multipart/form-data">
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <label for="event_name" class="form-label text-dark">Event Name</label>
-                                <input type="text" class="form-control" id="event_name" name="event_name" required>
+                                <label for="title" class="form-label text-dark">Event Name</label>
+                                <input type="text" class="form-control" id="title" name="title" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="start_date" class="form-label text-dark">Start Date</label>
+                                <input type="date" class="form-control" id="start_date" name="start_date" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="end_date" class="form-label text-dark">End Date</label>
+                                <input type="date" class="form-control" id="end_date" name="end_date" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="event_date" class="form-label text-dark">Date</label>
-                                <input type="date" class="form-control" id="event_date" name="event_date" required>
+                                <label for="location" class="form-label text-dark">Location</label>
+                                <input type="text" class="form-control" id="location" name="location" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="event_location" class="form-label text-dark">Location</label>
-                                <input type="text" class="form-control" id="event_location" name="event_location"
-                                    required>
+                                <label for="image" class="form-label text-dark">Image</label>
+                                <input type="file" class="form-control" id="image" name="image" accept="image/*">
                             </div>
                             <div class="col-md-6">
-                                <label for="event_image" class="form-label text-dark">Image</label>
-                                <input type="file" class="form-control" id="event_image" name="event_image"
-                                    accept="image/*">
+                                <label for="category_id" class="form-label text-dark">Category</label>
+                                <select class="form-select" id="category_id" name="category_id" required>
+                                    <option value="" disabled selected>Select a Category</option>
+                                    <option value="1">Festival</option>
+                                    <option value="2">Cultural Show</option>
+                                    <option value="3">Parade</option>
+                                    <option value="4">Community Fair</option>
+                                    <option value="5">Historical Exhibit</option>
+                                </select>
                             </div>
                             <div class="col-12">
-                                <label for="event_description" class="form-label text-dark">Description</label>
-                                <textarea class="form-control" id="event_description" name="event_description" rows="3"
+                                <label for="description" class="form-label text-dark">Description</label>
+                                <textarea class="form-control" id="description" name="description" rows="3"
                                     required></textarea>
                             </div>
                             <div class="col-12 text-end">
-                                <button type="submit" class="btn btn-success px-4">Submit Event</button>
+                                <button type="submit" name="submitEvent" id="submitEventID"
+                                    class="btn btn-success px-4">Submit Event</button>
                             </div>
                         </div>
                     </form>
@@ -316,16 +344,29 @@ include '../functions/eventCarousel.php';
             const monthNameEl = document.getElementById('month-name');
             const monthDropdown = document.getElementById('monthDropdown');
 
+            // ...existing code...
             const calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'dayGridMonth',
-                height: 600,
+                height: 'auto',
                 events: '../functions/calendar.php',
                 eventColor: '#46b07d',
                 eventTextColor: '#fff',
+                dayMaxEventRows: 5, // Show up to 5 events per day, then "+ more"
+                eventDisplay: 'block', // Ensures events are stacked
                 datesSet: function (info) {
                     updateMonthTitle(calendar.getDate());
+                },
+                eventDidMount: function (info) {
+                    // Make event text readable and show title on hover
+                    info.el.style.fontSize = '1em';
+                    info.el.style.padding = '3px 6px';
+                    info.el.style.whiteSpace = 'nowrap';
+                    info.el.style.overflow = 'hidden';
+                    info.el.style.textOverflow = 'ellipsis';
+                    info.el.title = info.event.title; // Show title as tooltip on hover
                 }
             });
+            // ...existing code...
 
             calendar.render();
 
@@ -368,7 +409,7 @@ include '../functions/eventCarousel.php';
                         card.className = 'col-md-4';
                         card.innerHTML = `
                         <div class="card h-100">
-                            <img src="${event.image}" class="card-img-top" alt="${event.title}" style="object-fit:cover; height:200px;">
+                            <img src="../${event.image}" class="card-img-top" alt="${event.title}" style="object-fit:cover; height:200px;">
                             <div class="card-body">
                                 <h5 class="card-title">${event.title}</h5>
                                 <p class="card-text small text-muted">${event.description}</p>
